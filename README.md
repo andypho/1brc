@@ -1,21 +1,24 @@
-# OneBrc
+# 1Brc in Elixir
 
-**TODO: Add description**
+To Run this: 
 
-## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `one_brc` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:one_brc, "~> 0.1.0"}
-  ]
-end
+```
+iex -S mix
+iex(1)> OneBrc.calculate_average(path)
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/one_brc>.
+Using `String.split/2` was quite slow, using `benchee` I found out using erlang `binary.match/2` was the fastest.
 
+# Environment / Spec
+- Elixir 1.15.6
+- Erlang/OTP 26
+- Ubuntu 22.04.3 LTS running on WSL
+- AMD Ryzen 7 3700X
+
+## My Result
+10m file: 4.3 (sec)
+50m file: 22.7 (sec)
+1b file: 389 (sec)
+
+## TODO
+- CreateMeasurements (currently generated using the python program provided in https://github.com/gunnarmorling/1brc)
